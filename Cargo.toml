@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "apple-rs-sys",
+    "apple-rs"
+]
