@@ -16,12 +16,16 @@ readme = "README.md"
 
 [dependencies]
 objc = { version = "0.2.6", optional = true }
+objc_id = { version = "0.1.1", optional = true }
 objc2 = { version = "0.4.0", optional = true }
 core-foundation = { version = "0.9.3", optional = true }
+lazy_static = "1.4.0"
+uuid = { version = "1.4.1", features = ["fast-rng", "v4"] }
 
 [features]
-default = ["objc", "servo-cf", "appkit"]
+default = ["objc", "servo-cf", "foundation", "appkit"]
 servo-cf = ["dep:core-foundation"]
-objc = ["dep:objc"]
+objc = ["dep:objc", "dep:objc_id"]
 objc2 = ["dep:objc2"]
-appkit = []
+foundation = []
+appkit = ["foundation"]
